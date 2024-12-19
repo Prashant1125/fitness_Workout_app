@@ -1,9 +1,7 @@
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/colo_extension.dart';
-import '../../common/common.dart';
 import '../../common_widget/icon_title_next_row.dart';
 import '../../common_widget/round_button.dart';
 
@@ -16,13 +14,10 @@ class SleepAddAlarmView extends StatefulWidget {
 }
 
 class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
-
   bool positive = false;
-  
+
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: TColor.white,
@@ -78,9 +73,6 @@ class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-         
-          
-          
           const SizedBox(
             height: 8,
           ),
@@ -111,7 +103,7 @@ class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
           const SizedBox(
             height: 10,
           ),
-         Container(
+          Container(
             padding: const EdgeInsets.symmetric(vertical: 8),
             decoration: BoxDecoration(
               color: TColor.lightGray,
@@ -120,8 +112,9 @@ class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
-               const SizedBox(width: 15,), 
+                const SizedBox(
+                  width: 15,
+                ),
                 Container(
                   width: 30,
                   height: 30,
@@ -140,15 +133,13 @@ class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
                     style: TextStyle(color: TColor.gray, fontSize: 12),
                   ),
                 ),
-                
-
                 SizedBox(
                   height: 30,
                   child: Transform.scale(
                     scale: 0.7,
                     child: CustomAnimatedToggleSwitch<bool>(
                       current: positive,
-                      values: [false, true],
+                      values: const [false, true],
                       dif: 0.0,
                       indicatorSize: const Size.square(30.0),
                       animationDuration: const Duration(milliseconds: 200),
@@ -202,7 +193,6 @@ class _SleepAddAlarmViewState extends State<SleepAddAlarmView> {
                     ),
                   ),
                 )
-               
               ],
             ),
           ),
